@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Recipe</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/recipes-page"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!-- <ion-grid class="ion-padding-top">
+    <ion-text> Please fill up the information</ion-text>
+    <div [formGroup]="addRecipeForm">
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Address</ion-label>
+        <ion-textarea formControlName="address"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-select formControlName="gender" placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    </div>
+  </ion-grid> -->
+
+  <ion-grid class="ion-padding-top">
+    <ion-text> Please fill up the information</ion-text>
+    <div [formGroup]="addRecipeForm">
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+
+        <ion-label position="floating">Address</ion-label>
+        <ion-textarea formControlName="address"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-select formControlName="gender" placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-grid class="ion-padding-top">
+        <ion-row class="ion-justify-content-center">
+
+          <ion-button shape="round" [disabled]="!signupForm.valid">Save</ion-button>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Recipes page</ion-title>
+    <ion-button slot="end" fill="clear" color="warning" routerLink = "/add-recipe" >
+      <fa-icon [icon]="['fas','plus']" size="2x"></fa-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let recipe of recipes" [routerLink]="['./', recipe.id]" >
+      <ion-avatar slot="start">
+        <ion-img [src]="recipe.imageUrl"></ion-img>
+      </ion-avatar>
+      <ion-label> {{ recipe.title }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
