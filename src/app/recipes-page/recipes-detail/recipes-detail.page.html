@@ -29,8 +29,8 @@
     <ion-row>
       <ion-col>
         <ion-list>
-          <ion-item *ngFor="let item of loadedRecipe.ingradiant">
-              {{ item }}
+          <ion-item>
+              {{ loadedRecipe?.ingradiant?.toString() }}
           </ion-item>
         </ion-list>
       </ion-col>

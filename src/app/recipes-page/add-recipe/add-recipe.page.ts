@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { RecipesService } from '../recipes.service';
 
 @Component({
   selector: 'app-add-recipe',
@@ -10,19 +11,26 @@ export class AddRecipePage implements OnInit {
 
   addRecipeForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private recipeServices: RecipesService
+    ) { }
 
   ngOnInit() {
     this.formInitializer();
   }
   formInitializer() {
     this.addRecipeForm = this.formBuilder.group({
-      name: null,
-      email: null,
-      address: null,
-      gender: null,
-      city: null
+      title: [null, [Validators.required]],
+      imageUrl: [null, [Validators.required]],
+      ingradiant: [null, [Validators.required]]
     });
+  }
+
+  addRecipe() {
+    console.log(this.addRecipeForm.value);
+    console.log(this.addRecipeForm.valid);
+    this.recipeServices.addRecipeObj(this.addRecipeForm.value);
   }
 
 }

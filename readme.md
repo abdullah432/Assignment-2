@@ -5,4 +5,4 @@
 <img src="recipe.jpg" width="252">
 
 ### Delete Alert Dialog Page
-<img src="delete alert.jpg" width="252">
+<img src="delete alert.JPG" width="252">

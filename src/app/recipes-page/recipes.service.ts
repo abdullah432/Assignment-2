@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { AddRecipePage } from './add-recipe/add-recipe.page';
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +53,39 @@ export class RecipesService {
     this.recipes = this.recipes.filter(e => {
       return e.id !== recipeId;
     });
+  }
 
-    console.log('After del: ', this.recipes);
+  addRecipe(title, imageUrl, ingradiant) {
+    let id: string;
+    let count = 0;
+    for (let i of this.recipes) {
+        count++;
+    }
+
+    id = 'id' + count;
+
+    const item = {
+        id,
+        title,
+        imageUrl,
+        ingradiant
+      };
+
+    this.recipes.push(item);
+
+  }
+  addRecipeObj(obj){
+    let id: string;
+    let count = 1;
+    for (let i of this.recipes) {
+        count++;
+    }
+
+    id = 'id' + count;
+
+    obj.id = id;
+    console.log('obj', obj);
+    this.recipes.push(obj);
+
   }
 }

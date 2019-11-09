@@ -39,35 +39,27 @@
   </ion-grid> -->
 
   <ion-grid class="ion-padding-top">
-    <ion-text> Please fill up the information</ion-text>
+    <ion-text> Please add new recipe</ion-text>
     <div [formGroup]="addRecipeForm">
       <ion-item>
-        <ion-label position="floating">Name</ion-label>
-        <ion-input formControlName="name"></ion-input>
+        <ion-label position="floating">Title</ion-label>
+        <ion-input formControlName="title"></ion-input>
       </ion-item>
+      
       <ion-item>
-
-        <ion-label position="floating">Email</ion-label>
-        <ion-input formControlName="email"></ion-input>
-      </ion-item>
-      <ion-item>
-
-        <ion-label position="floating">Address</ion-label>
-        <ion-textarea formControlName="address"></ion-textarea>
+        <ion-label position="floating">Image Url</ion-label>
+        <ion-input formControlName="imageUrl"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>Gender</ion-label>
-        <ion-select formControlName="gender" placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+        <ion-label position="floating">Ingradiant</ion-label>
+        <ion-input formControlName="ingradiant"></ion-input>
       </ion-item>
+
 
       <ion-grid class="ion-padding-top">
         <ion-row class="ion-justify-content-center">
-
-          <ion-button shape="round" [disabled]="!signupForm.valid">Save</ion-button>
+          <ion-button (click)="addRecipe()" shape="round" [disabled]="!addRecipeForm.valid">Save</ion-button>
         </ion-row>
       </ion-grid>
 
